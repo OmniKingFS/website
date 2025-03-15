@@ -400,6 +400,304 @@
                 opacity: 0;
             }
         }
+
+        /* Updated styles for the pricing section */
+        .whats-new-card {
+            background: linear-gradient(to bottom right, rgba(24, 24, 27, 0.9), #000);
+            border: 1px solid rgba(82, 82, 91, 0.5);
+            border-radius: 15px;
+            padding: 0;
+            width: 100%;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+        }
+        
+        .whats-new-header {
+            padding: 24px 24px 16px;
+        }
+        
+        .whats-new-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #fff, #d4d4d8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .whats-new-subtitle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .whats-new-subtitle-text {
+            font-size: 18px;
+            font-weight: 500;
+            color: #f4f4f5;
+        }
+        
+        .whats-new-date {
+            font-size: 14px;
+            color: #a1a1aa;
+        }
+        
+        .whats-new-content {
+            padding: 0 24px 24px;
+        }
+        
+        .whats-new-description {
+            margin-bottom: 24px;
+            color: #d4d4d8;
+            font-size: 15px;
+        }
+        
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        @media (min-width: 768px) {
+            .price-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .price-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            background-color: rgba(39, 39, 42, 0.5);
+            border: 1px solid rgba(82, 82, 91, 0.5);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        .price-item:hover {
+            background-color: rgba(63, 63, 70, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .price-amount, .price-value {
+            font-family: 'Courier New', monospace;
+            color: #f4f4f5;
+        }
+        
+        .price-equals {
+            font-family: 'Courier New', monospace;
+            color: #71717a;
+        }
+        
+        .payment-section {
+            margin-top: 24px;
+        }
+        
+        .payment-title {
+            font-weight: 500;
+            color: #f4f4f5;
+            margin-bottom: 16px;
+        }
+        
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        @media (min-width: 768px) {
+            .payment-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .payment-method-item {
+            padding: 12px;
+            background-color: rgba(39, 39, 42, 0.5);
+            border: 1px solid rgba(82, 82, 91, 0.5);
+            border-radius: 8px;
+            text-align: center;
+            color: #d4d4d8;
+            transition: all 0.2s;
+        }
+        
+        .payment-method-item:hover {
+            background-color: rgba(63, 63, 70, 0.5);
+        }
+        
+        .updates-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(to right, #2563eb, #60a5fa);
+            color: white;
+            font-weight: 500;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .updates-button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #a1a1a6;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .modal-close:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .modal-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-right: 30px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        
+        .update-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .update-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .update-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .update-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Search bar styles */
+        .search-container {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: #333;
+            border: 2px solid #444;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: #555;
+            box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.3),
+                        0 0 10px rgba(150, 150, 150, 0.2),
+                        0 0 20px rgba(150, 150, 150, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+            pointer-events: none;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            color: #a1a1a6;
+            font-style: italic;
+            display: none;
+        }
+
+        /* Highlight search matches */
+        .highlight {
+            background-color: rgba(37, 99, 235, 0.3);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body>
@@ -409,6 +707,7 @@
             <div class="nav-links">
                 <a href="#top" class="nav-link">Main</a>
                 <a href="#about" class="nav-link">About us</a>
+                <a href="#updates" class="nav-link">Updates</a>
                 <a href="#" class="nav-link" id="scripts-link">Scripts</a>
             </div>
         </nav>
@@ -446,6 +745,70 @@
                         </svg>
                         Join our Discord
                     </a>
+                </div>
+                
+                <!-- Updated "What's new?" section -->
+                <div id="updates" class="whats-new-card" style="margin-top: 40px;">
+                    <div class="whats-new-header">
+                        <h2 class="whats-new-title">What's new?</h2>
+                        <div class="whats-new-subtitle">
+                            <p class="whats-new-subtitle-text">OUR PRICES ARE LOWER!</p>
+                            <span class="whats-new-date">3/13/2025</span>
+                        </div>
+                    </div>
+                    <div class="whats-new-content">
+                        <p class="whats-new-description">
+                            Be free to buy what's updated for you in a cheaper price for our exclusive infinite stats method:
+                        </p>
+                        <div class="price-grid">
+                            <div class="price-item">
+                                <span class="price-amount">5</span>
+                                <span class="price-equals">=</span>
+                                <span class="price-value">25k</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-amount">10</span>
+                                <span class="price-equals">=</span>
+                                <span class="price-value">40k</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-amount">20</span>
+                                <span class="price-equals">=</span>
+                                <span class="price-value">70k</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-amount">30</span>
+                                <span class="price-equals">=</span>
+                                <span class="price-value">90k</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-amount">40</span>
+                                <span class="price-equals">=</span>
+                                <span class="price-value">125k</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-amount">50</span>
+                                <span class="price-equals">=</span>
+                                <span class="price-value">350k</span>
+                            </div>
+                        </div>
+                        <div class="payment-section">
+                            <p class="payment-title">We accept the payment with:</p>
+                            <div class="payment-grid">
+                                <div class="payment-method-item">CashApp</div>
+                                <div class="payment-method-item">Robux</div>
+                                <div class="payment-method-item">PayPal</div>
+                                <div class="payment-method-item">Giftcard</div>
+                            </div>
+                        </div>
+                        <button id="see-updates-btn" class="updates-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                            </svg>
+                            See old updates
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -552,6 +915,57 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/malumsw/FS/main/rs', 
         </div>
     </div>
     
+    <!-- Updates Modal with Search Bar -->
+    <div id="updates-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close">×</button>
+            <h2 class="modal-title">Update History</h2>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="update-search" class="search-input" placeholder="Search updates...">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- No Results Message -->
+            <div id="no-results" class="no-results">
+                No updates found matching your search.
+            </div>
+            
+            <!-- Updates Container -->
+            <div id="updates-container">
+                <div class="update-item" data-content="OUR PRICES ARE LOWER prices lower cheaper price infinite stats method cashapp robux paypal giftcard">
+                    <div class="update-header">
+                        <h3 class="update-title">OUR PRICES ARE LOWER!</h3>
+                        <span class="date">3/13/2025</span>
+                    </div>
+                    <p class="info-box-description">
+                        Be free to buy what's updated for you in a cheaper price for our exclusive infinite stats method:
+                    </p>
+                    <div class="pricing-info" style="margin: 15px 0; color: #a1a1a6;">
+                        5 = 25k<br>
+                        10 = 40k<br>
+                        20 = 70k<br>
+                        30 = 90k<br>
+                        40 = 125k<br>
+                        50 = 350k
+                    </div>
+                    <div class="payment-methods">
+                        We accept the payment with:<br>
+                        <div class="payment-method">CashApp</div>
+                        <div class="payment-method">Robux</div>
+                        <div class="payment-method">PayPal</div>
+                        <div class="payment-method">Giftcard</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Toast Notification -->
     <div id="toast" class="toast">Script copied to clipboard!</div>
     
@@ -562,6 +976,15 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/malumsw/FS/main/rs', 
         const scriptsLink = document.getElementById('scripts-link');
         const backButton = document.getElementById('back-button');
         const toast = document.getElementById('toast');
+        
+        // Updates Modal
+        const updatesModal = document.getElementById('updates-modal');
+        const seeUpdatesBtn = document.getElementById('see-updates-btn');
+        const modalClose = document.getElementById('modal-close');
+        const updateSearch = document.getElementById('update-search');
+        const updatesContainer = document.getElementById('updates-container');
+        const noResults = document.getElementById('no-results');
+        const updateItems = document.querySelectorAll('.update-item');
         
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -592,6 +1015,103 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/malumsw/FS/main/rs', 
             mainPage.style.display = 'block';
             document.body.style.overflow = 'auto';
         });
+        
+        // Updates modal toggle
+        seeUpdatesBtn.addEventListener('click', function() {
+            updatesModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Clear search when opening modal
+            updateSearch.value = '';
+            filterUpdates('');
+        });
+        
+        modalClose.addEventListener('click', function() {
+            updatesModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        updatesModal.addEventListener('click', function(e) {
+            if (e.target === updatesModal) {
+                updatesModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Search functionality
+        updateSearch.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase().trim();
+            filterUpdates(searchTerm);
+        });
+        
+        function filterUpdates(searchTerm) {
+            let foundResults = false;
+            
+            updateItems.forEach(item => {
+                const content = item.getAttribute('data-content').toLowerCase();
+                const title = item.querySelector('.update-title').textContent.toLowerCase();
+                const description = item.querySelector('.info-box-description').textContent.toLowerCase();
+                
+                if (searchTerm === '' || 
+                    content.includes(searchTerm) || 
+                    title.includes(searchTerm) || 
+                    description.includes(searchTerm)) {
+                    
+                    item.style.display = 'block';
+                    foundResults = true;
+                    
+                    // Highlight matching text if there's a search term
+                    if (searchTerm !== '') {
+                        highlightText(item, searchTerm);
+                    } else {
+                        // Remove highlights if search is cleared
+                        removeHighlights(item);
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Show/hide no results message
+            noResults.style.display = foundResults ? 'none' : 'block';
+        }
+        
+        function highlightText(element, searchTerm) {
+            // Remove existing highlights first
+            removeHighlights(element);
+            
+            // Elements to highlight text in
+            const titleEl = element.querySelector('.update-title');
+            const descEl = element.querySelector('.info-box-description');
+            
+            // Highlight in title
+            if (titleEl.textContent.toLowerCase().includes(searchTerm)) {
+                titleEl.innerHTML = applyHighlight(titleEl.textContent, searchTerm);
+            }
+            
+            // Highlight in description
+            if (descEl.textContent.toLowerCase().includes(searchTerm)) {
+                descEl.innerHTML = applyHighlight(descEl.textContent, searchTerm);
+            }
+        }
+        
+        function applyHighlight(text, searchTerm) {
+            const regex = new RegExp(searchTerm, 'gi');
+            return text.replace(regex, match => `<span class="highlight">${match}</span>`);
+        }
+        
+        function removeHighlights(element) {
+            const titleEl = element.querySelector('.update-title');
+            const descEl = element.querySelector('.info-box-description');
+            
+            // Store original text
+            const originalTitle = titleEl.textContent;
+            const originalDesc = descEl.textContent;
+            
+            // Reset to original text (removes any highlight spans)
+            titleEl.textContent = originalTitle;
+            descEl.textContent = originalDesc;
+        }
         
         // Copy script functionality
         const copyButtons = document.querySelectorAll('.copy-btn');
@@ -629,4 +1149,3 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/malumsw/FS/main/rs', 
     </script>
 </body>
 </html>
-
