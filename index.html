@@ -698,6 +698,25 @@
             padding: 0 2px;
             border-radius: 2px;
         }
+
+        /* Update list item styles */
+        .update-list {
+            margin-top: 15px;
+        }
+
+        .update-list-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #d4d4d8;
+        }
+
+        .update-list-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+        }
     </style>
 </head>
 <body>
@@ -747,60 +766,27 @@
                     </a>
                 </div>
                 
-                <!-- Updated "What's new?" section -->
+                <!-- Updated "What's new?" section with new title and content -->
                 <div id="updates" class="whats-new-card" style="margin-top: 40px;">
                     <div class="whats-new-header">
                         <h2 class="whats-new-title">What's new?</h2>
                         <div class="whats-new-subtitle">
-                            <p class="whats-new-subtitle-text">OUR PRICES ARE LOWER!</p>
-                            <span class="whats-new-date">3/13/2025</span>
+                            <p class="whats-new-subtitle-text">UPDATES BOX REVAMPED!</p>
+                            <span class="whats-new-date">3/15/2025</span>
                         </div>
                     </div>
                     <div class="whats-new-content">
                         <p class="whats-new-description">
-                            Be free to buy what's updated for you in a cheaper price for our exclusive infinite stats method:
+                            We have revamped a part of the updates box to what's new now:
                         </p>
-                        <div class="price-grid">
-                            <div class="price-item">
-                                <span class="price-amount">5</span>
-                                <span class="price-equals">=</span>
-                                <span class="price-value">25k</span>
-                            </div>
-                            <div class="price-item">
-                                <span class="price-amount">10</span>
-                                <span class="price-equals">=</span>
-                                <span class="price-value">40k</span>
-                            </div>
-                            <div class="price-item">
-                                <span class="price-amount">20</span>
-                                <span class="price-equals">=</span>
-                                <span class="price-value">70k</span>
-                            </div>
-                            <div class="price-item">
-                                <span class="price-amount">30</span>
-                                <span class="price-equals">=</span>
-                                <span class="price-value">90k</span>
-                            </div>
-                            <div class="price-item">
-                                <span class="price-amount">40</span>
-                                <span class="price-equals">=</span>
-                                <span class="price-value">125k</span>
-                            </div>
-                            <div class="price-item">
-                                <span class="price-amount">50</span>
-                                <span class="price-equals">=</span>
-                                <span class="price-value">350k</span>
-                            </div>
+                        <div class="update-list">
+                            <div class="update-list-item">See old updates button</div>
+                            <div class="update-list-item">Update box revamped</div>
+                            <div class="update-list-item">More activity now</div>
                         </div>
-                        <div class="payment-section">
-                            <p class="payment-title">We accept the payment with:</p>
-                            <div class="payment-grid">
-                                <div class="payment-method-item">CashApp</div>
-                                <div class="payment-method-item">Robux</div>
-                                <div class="payment-method-item">PayPal</div>
-                                <div class="payment-method-item">Giftcard</div>
-                            </div>
-                        </div>
+                        <p class="whats-new-description" style="margin-top: 16px;">
+                            If you have any suggestion, please do and go suggest in the server by pinging the Developer.
+                        </p>
                         <button id="see-updates-btn" class="updates-button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
@@ -831,7 +817,7 @@
             </div>
         </section>
     </div>
-    
+
     <!-- Scripts Page -->
     <div id="scripts-page" class="scripts-container">
         <button id="back-button" class="back-btn">
@@ -851,7 +837,7 @@
                 <button class="copy-btn" data-script="-- [[ BOOGA HUB V5 ]]
 
 if not game:IsLoaded() then
-    game.Loaded:Wait()
+game.Loaded:Wait()
 end
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/FortniBloxYT1/BOOGA-HUB-V4/main/BOOGA-HUB%20V5.lua'))()">
@@ -867,16 +853,16 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/FortniBloxYT1/BOOGA-H
                 <h3 class="script-title">Auto Broly</h3>
                 <p class="script-description">Automatically beat Broly to gain lots of XP</p>
                 <button class="copy-btn" data-script="AppleSettings = {
-    LevelMax = 800, -- Max Lvl U Want Reach
-    TimerRjQueue = 35, -- Seconds For Queue Else Rejoin
-    TimerForBroly = 180, -- Seconds For Broly Else Rejoin
-    ExtraTimeToLoad = 0, 
-    Senzu = false, -- Spam The Senzu
-    PadQueue = 6, -- From 1 to 7
-    Form = {false,'h',3},-- Enable = true/ false - Button Form - Seconds Charge
-    Moves = { -- Put What You Think Are The Best Moves
-        'Big Bang Kamehameha',
-    },
+LevelMax = 800, -- Max Lvl U Want Reach
+TimerRjQueue = 35, -- Seconds For Queue Else Rejoin
+TimerForBroly = 180, -- Seconds For Broly Else Rejoin
+ExtraTimeToLoad = 0, 
+Senzu = false, -- Spam The Senzu
+PadQueue = 6, -- From 1 to 7
+Form = {false,'h',3},-- Enable = true/ false - Button Form - Seconds Charge
+Moves = { -- Put What You Think Are The Best Moves
+    'Big Bang Kamehameha',
+},
 }
 loadstring(game:HttpGet('https://raw.githubusercontent.com/malumsw/FS/refs/heads/main/ab', true))()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -914,7 +900,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/malumsw/FS/main/rs', 
             </a>
         </div>
     </div>
-    
+
     <!-- Updates Modal with Search Bar -->
     <div id="updates-modal" class="modal-overlay">
         <div class="modal-content">
@@ -938,6 +924,26 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/malumsw/FS/main/rs', 
             
             <!-- Updates Container -->
             <div id="updates-container">
+                <!-- New Update (Newest first) -->
+                <div class="update-item" data-content="UPDATES BOX REVAMPED revamped update box see old updates button more activity now suggestion developer ping">
+                    <div class="update-header">
+                        <h3 class="update-title">UPDATES BOX REVAMPED!</h3>
+                        <span class="date">3/15/2025</span>
+                    </div>
+                    <p class="info-box-description">
+                        We have revamped a part of the updates box to what's new now:
+                    </p>
+                    <div class="update-list" style="margin: 15px 0; color: #a1a1a6;">
+                        <div class="update-list-item">See old updates button</div>
+                        <div class="update-list-item">Update box revamped</div>
+                        <div class="update-list-item">More activity now</div>
+                    </div>
+                    <p class="info-box-description">
+                        If you have any suggestion, please do and go suggest in the server by pinging the Developer.
+                    </p>
+                </div>
+                
+                <!-- Old Update -->
                 <div class="update-item" data-content="OUR PRICES ARE LOWER prices lower cheaper price infinite stats method cashapp robux paypal giftcard">
                     <div class="update-header">
                         <h3 class="update-title">OUR PRICES ARE LOWER!</h3>
@@ -965,10 +971,10 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/malumsw/FS/main/rs', 
             </div>
         </div>
     </div>
-    
+
     <!-- Toast Notification -->
     <div id="toast" class="toast">Script copied to clipboard!</div>
-    
+
     <script>
         // Navigation
         const mainPage = document.getElementById('main-page');
@@ -1082,17 +1088,27 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/malumsw/FS/main/rs', 
             
             // Elements to highlight text in
             const titleEl = element.querySelector('.update-title');
-            const descEl = element.querySelector('.info-box-description');
+            const descEls = element.querySelectorAll('.info-box-description');
+            const listItems = element.querySelectorAll('.update-list-item');
             
             // Highlight in title
             if (titleEl.textContent.toLowerCase().includes(searchTerm)) {
                 titleEl.innerHTML = applyHighlight(titleEl.textContent, searchTerm);
             }
             
-            // Highlight in description
-            if (descEl.textContent.toLowerCase().includes(searchTerm)) {
-                descEl.innerHTML = applyHighlight(descEl.textContent, searchTerm);
-            }
+            // Highlight in descriptions
+            descEls.forEach(descEl => {
+                if (descEl.textContent.toLowerCase().includes(searchTerm)) {
+                    descEl.innerHTML = applyHighlight(descEl.textContent, searchTerm);
+                }
+            });
+            
+            // Highlight in list items
+            listItems.forEach(item => {
+                if (item.textContent.toLowerCase().includes(searchTerm)) {
+                    item.innerHTML = applyHighlight(item.textContent, searchTerm);
+                }
+            });
         }
         
         function applyHighlight(text, searchTerm) {
@@ -1102,15 +1118,24 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/malumsw/FS/main/rs', 
         
         function removeHighlights(element) {
             const titleEl = element.querySelector('.update-title');
-            const descEl = element.querySelector('.info-box-description');
+            const descEls = element.querySelectorAll('.info-box-description');
+            const listItems = element.querySelectorAll('.update-list-item');
             
-            // Store original text
-            const originalTitle = titleEl.textContent;
-            const originalDesc = descEl.textContent;
+            // Store original text and reset to remove highlights
+            if (titleEl) {
+                const originalTitle = titleEl.textContent;
+                titleEl.textContent = originalTitle;
+            }
             
-            // Reset to original text (removes any highlight spans)
-            titleEl.textContent = originalTitle;
-            descEl.textContent = originalDesc;
+            descEls.forEach(descEl => {
+                const originalDesc = descEl.textContent;
+                descEl.textContent = originalDesc;
+            });
+            
+            listItems.forEach(item => {
+                const originalItem = item.textContent;
+                item.textContent = originalItem;
+            });
         }
         
         // Copy script functionality
